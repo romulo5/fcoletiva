@@ -8,13 +8,20 @@ import {
   MDBNavItem,
   MDBNavLink,
   MDBContainer,
-  MDBMask,
+  // MDBMask,
   MDBView,
   MDBRow,
   MDBCol,
   MDBCarousel,
   MDBCarouselInner,
-  MDBCarouselItem
+  MDBCarouselItem,
+  MDBCard,
+  MDBCardBody,
+  MDBModalFooter,
+  MDBIcon,
+  MDBCardHeader,
+  MDBBtn,
+  MDBInput
 } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import header from './assets/header-clip.jpg';
@@ -29,13 +36,13 @@ const App = () => {
       {/* NavBar */}
       <header>
         <Router>
-          <MDBNavbar color="green darken-2" dark expand="md" fixed="top">
+          <MDBNavbar color=" green accent-4" dark expand="md" fixed="top">
             <MDBNavbarBrand href="/">
               <strong>Fazenda Coletiva</strong>
             </MDBNavbarBrand>
             <MDBNavbarToggler onClick={() => setCollapse(!collapse)} />
             <MDBCollapse isOpen={collapse} navbar>
-              <MDBNavbarNav left>
+              <MDBNavbarNav right>
                 <MDBNavItem active>
                   <MDBNavLink to="#">Login</MDBNavLink>
                 </MDBNavItem>
@@ -56,6 +63,7 @@ const App = () => {
           showControls={false}
           showIndicators={true}
           className="z-depth-1 mt-5"
+          style={{zIndex:0}}
         >
           <MDBCarouselInner>
             <MDBCarouselItem itemId="1">
@@ -159,6 +167,8 @@ const App = () => {
 
       <main>
         <MDBContainer className="text-center my-5">
+        <MDBRow>
+          <MDBCol>
           <p align="justify">
             Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
             commodo consequat. Duis aute irure dolor in reprehenderit in
@@ -173,6 +183,64 @@ const App = () => {
             cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum.
           </p>
+          </MDBCol>
+          <MDBCol className="mt-n5 ">
+          <MDBCard>
+            <MDBCardBody>
+              <MDBCardHeader className="form-header grey lighten-5 rounded mt-n5 z-depth-1">
+                <h5 className="my-3">
+                 Cadastre agora e comece a  <span style={{ color: "orange" }}>economizar</span> já! Receba
+                ainda um material exclusivo:  <br/>8 Dicas para Economizar com Insumos na Propriedade!
+                </h5>
+              </MDBCardHeader>
+              <form>
+                <div className="grey-text ">
+               
+                <MDBInput
+                    // icon="user"
+                    label="Nome"
+                    group
+                    type="text"
+                    validate
+                    error="wrong"
+                    success="right"
+                    />
+      
+                  <MDBInput
+                    label="Email"
+                    // icon="envelope"
+                    group
+                    type="email"
+                    validate
+                    error="wrong"
+                    success="right"
+                  />
+                 
+                  <MDBInput
+                    label="Telefone"
+                    // icon="phone"
+                    group
+                    type="text"
+                    validate
+                  />
+                </div>
+
+              <div className="text-center py-4 mt-4">
+                <MDBBtn
+                  color="amber darken-2"
+                  className="mb-3"
+                  type="submit"
+                >
+                  Cadastrar
+                </MDBBtn>
+              </div>
+              </form>
+             
+            </MDBCardBody>
+          </MDBCard>
+          </MDBCol>
+        </MDBRow>
+          
         </MDBContainer>
       </main>
     </div>
