@@ -1,15 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarNav,
-  MDBNavbarToggler,
-  MDBCollapse,
-  MDBNavItem,
-  MDBNavLink,
   MDBContainer,
-  // MDBMask,
-  MDBView,
   MDBRow,
   MDBCol,
   MDBCarousel,
@@ -17,232 +8,286 @@ import {
   MDBCarouselItem,
   MDBCard,
   MDBCardBody,
-  MDBModalFooter,
-  MDBIcon,
   MDBCardHeader,
   MDBBtn,
-  MDBInput
-} from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
-import header from './assets/header-clip.jpg';
-import header1 from './assets/h1-clip.jpg';
-import header2 from './assets/header2-clip.jpg';
-import logo from './assets/logo.png';
+  MDBInput,
+  MDBModal,
+  MDBModalBody,
+  MDBModalHeader,
+  MDBModalFooter,
+  MDBIcon,
+  MDBFooter
+} from "mdbreact";
+import TopBar from "./components/TopBar";
+import BannerItem from "./components/BannerItem";
+import header from "./assets/header-clip.jpg";
+import header1 from "./assets/h1-clip.jpg";
+import header2 from "./assets/header2-clip.jpg";
+import foto1 from "./assets/Jera.png";
+import foto2 from "./assets/Fernando_Marin.jpg.png";
+import foto3 from "./assets/Aldo.png";
+import logo from "./assets/logo.png";
+import face from "./assets/face.png";
+import insta from "./assets/insta.png";
+import twitter from "./assets/twitter.png";
+import "./App.css";
+import Footer from "./components/Footer";
 
 const App = () => {
-  const [collapse, setCollapse] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const sendForm = e => {
+    e.preventDefault();
+    setModalOpen(!isModalOpen);
+  };
   return (
     <div>
-      {/* NavBar */}
       <header>
-        <Router>
-          <MDBNavbar color=" green accent-4" dark expand="md" fixed="top">
-            <MDBNavbarBrand href="/">
-              <strong>Fazenda Coletiva</strong>
-            </MDBNavbarBrand>
-            <MDBNavbarToggler onClick={() => setCollapse(!collapse)} />
-            <MDBCollapse isOpen={collapse} navbar>
-              <MDBNavbarNav right>
-                <MDBNavItem active>
-                  <MDBNavLink to="#">Login</MDBNavLink>
-                </MDBNavItem>
-                {/* <MDBNavItem> */}
-                {/* <MDBNavLink to="#">Link</MDBNavLink>
-                  </MDBNavItem>
-                  <MDBNavItem>
-                    <MDBNavLink to="#">Profile</MDBNavLink>
-                  </MDBNavItem> */}
-              </MDBNavbarNav>
-            </MDBCollapse>
-          </MDBNavbar>
-        </Router>
-        {/* Hero */}
+        <TopBar />
+
+        {/* Banner  - Carrosel*/}
         <MDBCarousel
           activeItem={1}
           length={3}
           showControls={false}
           showIndicators={true}
           className="z-depth-1 mt-5"
-          style={{zIndex:0}}
+          style={{ zIndex: 0 }}
         >
           <MDBCarouselInner>
             <MDBCarouselItem itemId="1">
-              <div className="view">
-                <img
-                  className="d-block w-100"
-                  src={header1}
-                  alt="First slide"
-                />
-                <div className="mask ">
-                  <div className="container mw-100 h-100">
-                    <div className="row  h-100 d-flex">
-                      <div className="col-6 pt-5 text-center align-self-center ">
-                        <img
-                          src={logo}
-                          className=" img-fluid d-inline w-50 text-center"
-                          alt="logo"
-                        />
-                      </div>
-                      <div className="col-6 pt-5 text-center align-self-center ">
-                        <h1 className="white-text h1-responsive text-center ">
-                          Sua nova maneira de comprar insumos para sua fazenda.
-                        </h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <BannerItem image={header1} />
             </MDBCarouselItem>
             <MDBCarouselItem itemId="2">
-              <MDBView>
-                <img
-                  className="d-block w-100"
-                  src={header}
-                  alt="Second slide"
-                />
-                <div className="mask ">
-                  <div className="container mw-100 h-100">
-                    <div className="row  h-100 d-flex">
-                      <div className="col-6 pt-5 text-center align-self-center ">
-                        <img
-                          src={logo}
-                          className=" img-fluid d-inline w-50 text-center"
-                          alt="logo"
-                        />
-                      </div>
-                      <div className="col-6 pt-5 text-center align-self-center ">
-                        <h1 className="white-text h1-responsive text-center ">
-                          Sua nova maneira de comprar insumos para sua fazenda.
-                        </h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </MDBView>
+              <BannerItem image={header} />
             </MDBCarouselItem>
             <MDBCarouselItem itemId="3">
-              <MDBView>
-                <img
-                  className="d-block w-100"
-                  src={header2}
-                  alt="Third slide"
-                />
-                <div className="mask ">
-                  <div className="container mw-100 h-100">
-                    <div className="row  h-100 d-flex">
-                      <div className="col-6 pt-5 text-center align-self-center ">
-                        <img
-                          src={logo}
-                          className=" img-fluid d-inline w-50 text-center"
-                          alt="logo"
-                        />
-                      </div>
-                      <div className="col-6 pt-5 text-center align-self-center ">
-                        <h1 className="white-text h1-responsive text-center ">
-                          Sua nova maneira de comprar insumos para sua fazenda.
-                        </h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </MDBView>
+              <BannerItem image={header2} />
             </MDBCarouselItem>
           </MDBCarouselInner>
         </MDBCarousel>
-
-        {/* <MDBView src=}>
-          <MDBMask className="flex-center flex-column text-white text-center">
-            <h2>Fazenda Coletiva</h2>
-            <h5>
-              It will always stay visible on the top, even when you scroll down
-            </h5>
-            <br />
-            <p>
-              Full page intro with background image will be always displayed in
-              full screen mode, regardless of device{' '}
-            </p>
-          </MDBMask>
-        </MDBView> */}
       </header>
 
       <main>
-        <MDBContainer className="text-center my-5">
-        <MDBRow>
-          <MDBCol>
-          <p align="justify">
-            Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
-          </p>
-          </MDBCol>
-          <MDBCol className="mt-n5 ">
-          <MDBCard>
-            <MDBCardBody>
-              <MDBCardHeader className="form-header grey lighten-5 rounded mt-n5 z-depth-1">
-                <h5 className="my-3">
-                 Cadastre agora e comece a  <span style={{ color: "orange" }}>economizar</span> já! Receba
-                ainda um material exclusivo:  <br/>8 Dicas para Economizar com Insumos na Propriedade!
-                </h5>
-              </MDBCardHeader>
-              <form>
-                <div className="grey-text ">
-               
-                <MDBInput
-                    // icon="user"
-                    label="Nome"
-                    group
-                    type="text"
-                    validate
-                    error="wrong"
-                    success="right"
-                    />
-      
-                  <MDBInput
-                    label="Email"
-                    // icon="envelope"
-                    group
-                    type="email"
-                    validate
-                    error="wrong"
-                    success="right"
+        <MDBContainer className="text-center  mt-5 mw-100">
+          <MDBRow className="mx-5 mb-5">
+            <MDBCol size="sm" className="order-1 mx-5">
+              {/* Como Funciona*/}
+              <h1 className="pt-5 pt-sm-0 pb-3 ">Como Funciona</h1>
+              <MDBRow className="d-flex py-4 mx-5">
+                <MDBCol className="p-0">
+                  <MDBIcon
+                    icon="search-dollar"
+                    size="3x"
+                    className="cyan-text text-left "
                   />
-                 
-                  <MDBInput
-                    label="Telefone"
-                    // icon="phone"
-                    group
-                    type="text"
-                    validate
+                </MDBCol>
+                <MDBCol className="d-flex align-items-center p-0 col-10  ">
+                  <h5 className="w-100">
+                    Encontre um cupom para o insumo que deseja comprar
+                  </h5>
+                </MDBCol>
+              </MDBRow>
+              <MDBRow className="d-flex py-5 mx-5">
+                <MDBCol className="p-0">
+                  <MDBIcon
+                    icon="shopping-cart"
+                    size="3x"
+                    className="cyan-text "
                   />
-                </div>
+                </MDBCol>
+                <MDBCol className="d-flex align-items-center text-center p-0 col-10  ">
+                  <h5 className="w-100">
+                    Compre o cupom e garanta o preço promocional
+                  </h5>
+                </MDBCol>
+              </MDBRow>
+              <MDBRow className="d-flex py-5 mx-5">
+                <MDBCol className="p-0">
+                  <MDBIcon
+                    icon="shopping-cart"
+                    size="3x"
+                    className="cyan-text "
+                  />
+                </MDBCol>
+                <MDBCol className="d-flex align-items-center p-0 col-10 text-center ">
+                  <h5 className="w-100">
+                    Retire o produto na revenda ou Receba na Fazenda
+                  </h5>
+                </MDBCol>
+              </MDBRow>
+            </MDBCol>
 
-              <div className="text-center py-4 mt-4">
-                <MDBBtn
-                  color="amber darken-2"
-                  className="mb-3"
-                  type="submit"
+            {/* Form */}
+
+            <MDBCol size="sm" className="mt-n5 pt-2 order-sm-1 mx-5">
+              <MDBCard className="mx-5">
+                <MDBCardBody>
+                  <MDBCardHeader className="form-header grey lighten-5 rounded mt-n5  z-depth-1">
+                    <h5 className="my-3 h5-responsive">
+                      Cadastre-se agora e comece a
+                      <span style={{ color: "orange" }}> economizar</span> já!
+                      <br />
+                      <small className="text-muted">
+                        Receba ainda um material exclusivo:{" "}
+                      </small>
+                      <br />
+                      <small>
+                        8 Dicas para Economizar com Insumos na Propriedade!
+                      </small>
+                    </h5>
+                  </MDBCardHeader>
+                  <form>
+                    <div className="grey-text ">
+                      <MDBInput
+                        // icon="user"
+                        label="Nome"
+                        group
+                        type="text"
+                        validate
+                        error="wrong"
+                        success="right"
+                      />
+
+                      <MDBInput
+                        label="Email"
+                        // icon="envelope"
+                        group
+                        type="email"
+                        validate
+                        error="wrong"
+                        success="right"
+                      />
+
+                      <MDBInput
+                        label="Telefone"
+                        // icon="phone"
+                        group
+                        type="text"
+                        validate
+                      />
+                    </div>
+
+                    <div className="text-center py-4 mt-4">
+                      <MDBBtn
+                        color="amber darken-2"
+                        className="mb-3"
+                        type="submit"
+                        onClick={e => sendForm(e)}
+                      >
+                        Cadastrar
+                        <MDBIcon far icon="paper-plane" className="ml-3" />
+                      </MDBBtn>
+                    </div>
+                  </form>
+                </MDBCardBody>
+              </MDBCard>
+
+              {/* FORM SEND MODAL  */}
+              <MDBModal
+                isOpen={isModalOpen}
+                toggle={() => setModalOpen(false)}
+                size="md"
+              >
+                <MDBModalHeader
+                  className="green darken-3"
+                  toggle={() => setModalOpen(false)}
                 >
-                  Cadastrar
-                </MDBBtn>
-              </div>
-              </form>
-             
-            </MDBCardBody>
-          </MDBCard>
-          </MDBCol>
-        </MDBRow>
-          
+                  <h4 className="text-center text-white">
+                    Cadastro Realizado!
+                  </h4>
+                </MDBModalHeader>
+                <MDBModalBody className="text-justify">
+                  Enviamos para seu email um documento com 8 dicas para você
+                  economizar com insumos na sua propriedade. <br /> <br />
+                  Grato por se cadastrar conosco, entraremos em contato
+                  novamente em breve com novidades!
+                </MDBModalBody>
+                <MDBModalFooter>
+                  <MDBBtn
+                    color="green darken-3"
+                    onClick={() => setModalOpen(false)}
+                  >
+                    Continuar
+                  </MDBBtn>
+                </MDBModalFooter>
+              </MDBModal>
+            </MDBCol>
+          </MDBRow>
+
+          {/* Second Row */}
+          <MDBRow className="text-center grey lighten-5 px-5 pt-5 w-100">
+            {/* Testimonials */}
+            <div className="container">
+              <h1>Depoimentos</h1>
+            </div>
+            <MDBRow className="text-center py-5">
+              <MDBCol md="4" className="mb-md-0 mb-5">
+                <img
+                  src={foto1}
+                  alt=""
+                  className="rounded-circle z-depth-2 img-fluid tes-images"
+                />
+
+                <h4 className="font-weight-bold dark-grey-text mt-4">
+                  Jerônimo Juhei
+                </h4>
+                <h6 className="font-weight-bold blue-text my-3">
+                  Planaltina - DF
+                </h6>
+                <p className="font-weight-normal dark-grey-text">
+                  <MDBIcon className="fa fa-quote-left pr-2" />
+                  Com o Fazenda Coletiva consegui reduzir meus custos na compra
+                  de insumos em até 15%! Tudo isso porque passei a comprar
+                  individualmente mais em escala.
+                </p>
+              </MDBCol>
+              <MDBCol md="4" className="mb-md-0 mb-5 ">
+                <img
+                  src={foto2}
+                  alt=""
+                  className="rounded-circle z-depth-2 img-fluid tes-images"
+                />
+
+                <h4 className="font-weight-bold dark-grey-text mt-4">
+                  Fernando Marin
+                </h4>
+                <h6 className="font-weight-bold blue-text my-3">
+                  Alvorada - TO
+                </h6>
+                <p className="font-weight-normal dark-grey-text">
+                  <MDBIcon className="fa fa-quote-left pr-2" />
+                  Comprei defensivo muito mais barato, sem precisar participar
+                  de cooperativa, nada. Sem burocracia, rápido e muito bom para
+                  o pequeno produtor.
+                </p>
+              </MDBCol>
+              <MDBCol md="4">
+                <img
+                  src={foto3}
+                  alt=""
+                  className="rounded-circle z-depth-2 img-fluid tes-images"
+                />
+                <h4 className="font-weight-bold dark-grey-text mt-4">
+                  Aldo Kross
+                </h4>
+                <h6 className="font-weight-bold blue-text my-3">
+                  Agropecuária Kross
+                </h6>
+                <p className="font-weight-normal dark-grey-text">
+                  <MDBIcon className="fa fa-quote-left pr-2" />
+                  Cortei meu custo médio de venda e vendi muito mais utilizando
+                  o sistema de compras coletivas. A iniciativa é incrível e
+                  facilita a gestão de estoques da minha revenda. Aldo Kross -
+                  Agropecuária Kross
+                </p>
+              </MDBCol>
+            </MDBRow>
+          </MDBRow>
         </MDBContainer>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };
