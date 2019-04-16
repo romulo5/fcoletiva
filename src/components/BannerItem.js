@@ -1,5 +1,6 @@
 import React from "react";
 import logo from '../assets/logo.png'
+import './bannerItem.css';
 
 const BannerItem = ({image}) =>{
     return (
@@ -20,8 +21,8 @@ const BannerItem = ({image}) =>{
                         />
                       </div>
                       <div className="col-6 pt-5 text-center align-self-center ">
-                        <h1 className="white-text h1-responsive text-center ">
-                          Sua nova maneira de comprar insumos para sua fazenda.
+                        <h1 className="white-text h1-responsive text-center slogan">
+                          O melhor jeito de comprar insumos para sua propriedade
                         </h1>
                       </div>
                     </div>

@@ -22,14 +22,10 @@ import TopBar from "./components/TopBar";
 import BannerItem from "./components/BannerItem";
 import header from "./assets/header-clip.jpg";
 import header1 from "./assets/h1-clip.jpg";
-import header2 from "./assets/header2-clip.jpg";
+import header3 from "./assets/header3-clip.png";
 import foto1 from "./assets/Jera.png";
 import foto2 from "./assets/Fernando_Marin.jpg.png";
 import foto3 from "./assets/Aldo.png";
-import logo from "./assets/logo.png";
-import face from "./assets/face.png";
-import insta from "./assets/insta.png";
-import twitter from "./assets/twitter.png";
 import "./App.css";
 import Footer from "./components/Footer";
 
@@ -61,7 +57,7 @@ const App = () => {
               <BannerItem image={header} />
             </MDBCarouselItem>
             <MDBCarouselItem itemId="3">
-              <BannerItem image={header2} />
+              <BannerItem image={header3} />
             </MDBCarouselItem>
           </MDBCarouselInner>
         </MDBCarousel>
@@ -83,7 +79,7 @@ const App = () => {
                 </MDBCol>
                 <MDBCol className="d-flex align-items-center p-0 col-10  ">
                   <h5 className="w-100">
-                    Encontre um cupom para o insumo que deseja comprar
+                    Encontre o insumo que precisa para sua propriedade
                   </h5>
                 </MDBCol>
               </MDBRow>
