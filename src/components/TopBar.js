@@ -9,7 +9,7 @@ import {
   MDBNavbarNav,
   MDBNavbar
 } from "mdbreact";
-
+import logoHorizontal from "../assets/logoHorizontal.png"
 const TopBar = () => {
   const [collapse, setCollapse] = useState(false);
 
@@ -17,9 +17,9 @@ const TopBar = () => {
     <Router>
       <MDBNavbar color="success-color-dark" dark expand="md" fixed="top">
         <MDBNavbarBrand href="/">
-          <strong>Fazenda Coletiva</strong>
+          <img className="ml-3" src={logoHorizontal}></img>
         </MDBNavbarBrand>
-        <MDBNavbarToggler onClick={() => setCollapse(!collapse)} />
+        <MDBNavbarToggler className="mr-3" onClick={() => setCollapse(!collapse)} />
         <MDBCollapse isOpen={collapse} navbar>
           <MDBNavbarNav right>
             <MDBNavItem active>
