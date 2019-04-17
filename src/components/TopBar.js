@@ -19,7 +19,7 @@ const TopBar = () => {
         <MDBNavbarBrand href="/">
           <img className="ml-3" src={logoHorizontal}></img>
         </MDBNavbarBrand>
-        <MDBNavbarToggler className="mr-3" onClick={() => setCollapse(!collapse)} />
+        <MDBNavbarToggler className="mr-5" onClick={() => setCollapse(!collapse)} />
         <MDBCollapse isOpen={collapse} navbar>
           <MDBNavbarNav right>
             <MDBNavItem active>
