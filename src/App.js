@@ -232,9 +232,8 @@ const App = () => {
                 </h6>
                 <p className="font-weight-normal dark-grey-text">
                   <MDBIcon className="fa fa-quote-left pr-2" />
-                  Com o Fazenda Coletiva consegui reduzir meus custos na compra
-                  de insumos em até 15%! Tudo isso porque passei a comprar
-                  individualmente mais em escala.
+                  Com o fazenda Coletiva, eu reduzi meus
+custos com de insumos em 15%. Tudo isso por que passei a comprar individualmente, mas em escala.
                 </p>
               </MDBCol>
               <MDBCol md="4" className="mb-md-0 mb-5 ">
