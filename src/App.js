@@ -86,28 +86,28 @@ const App = () => {
               <MDBRow className="d-flex py-5 mx-5">
                 <MDBCol className="p-0">
                   <MDBIcon
-                    icon="shopping-cart"
+                    icon="credit-card"
                     size="3x"
                     className="cyan-text "
                   />
                 </MDBCol>
                 <MDBCol className="d-flex align-items-center text-center p-0 col-10  ">
                   <h5 className="w-100">
-                    Compre o cupom e garanta o preço promocional
+                    Compre o cupom e garanta o desconto em sua compra
                   </h5>
                 </MDBCol>
               </MDBRow>
               <MDBRow className="d-flex py-5 mx-5">
                 <MDBCol className="p-0">
                   <MDBIcon
-                    icon="shopping-cart"
+                    icon="truck"
                     size="3x"
                     className="cyan-text "
                   />
                 </MDBCol>
                 <MDBCol className="d-flex align-items-center p-0 col-10 text-center ">
                   <h5 className="w-100">
-                    Retire o produto na revenda ou Receba na Fazenda
+                    Agenda  retirada do produto ou solicite a entrega na fazenda.
                   </h5>
                 </MDBCol>
               </MDBRow>
