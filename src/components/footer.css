@@ -2,3 +2,24 @@
     font-weight: bold;
     
 }
+.footer {
+    height: 180px;
+  }
+  .insta:hover {
+    /* height: 5em; */
+    background-color: green;
+  }
+  .face:hover {
+    background-color: green;
+  }
+  .twitter:hover {
+    background-color: green;
+  }
+  .logo {
+    height: 13em;
+    margin-right: 20%;
+  }
+  .logo:hover {
+    height: 15em;
+  }
+  
