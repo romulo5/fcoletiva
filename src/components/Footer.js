@@ -5,14 +5,15 @@ import face from "../assets/face.png";
 import insta from "../assets/insta.png";
 import twitter from "../assets/twitter.png";
 import "../App.css";
+import './footer.css';
 
 const Footer = () => {
   return (
-    <MDBFooter color="green darken-2" className="font-small pt-4 z-depth-3">
+    <MDBFooter color="green darken-2" className="font-small pt-2 z-depth-3">
       <MDBContainer fluid className="text-center text-md-left">
-        <MDBRow className="footer pt-1">
+        <MDBRow className="footer pt-2">
           <MDBCol size="sm" className="text-center">
-            <h2 className="title pb-1">Siga nossas redes sociais </h2>
+            <h2 className="title pb-2">Siga nossas redes sociais </h2>
             <a href="http://www.instagram.com/fazendacoletiva">
               <img className="insta " src={insta} alt="instagram" />
             </a>
