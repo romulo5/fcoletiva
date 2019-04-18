@@ -17,9 +17,9 @@ const TopBar = () => {
     <Router>
       <MDBNavbar color="success-color-dark" dark expand="md" fixed="top">
         <MDBNavbarBrand href="/">
-          <img className="ml-3" src={logoHorizontal}></img>
+          <img className="ml-2" src={logoHorizontal}></img>
         </MDBNavbarBrand>
-        <MDBNavbarToggler className="mr-5" onClick={() => setCollapse(!collapse)} />
+        <MDBNavbarToggler className="mr-2" onClick={() => setCollapse(!collapse)} />
         <MDBCollapse isOpen={collapse} navbar>
           <MDBNavbarNav right>
             <MDBNavItem active>
